@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - "10"
+
+env:
+  - PUBLIC_PATH=/pokemon-frontend-challenge/
+
+cache:
+  directories:
+  - node_modules
+
+script:
+  - npm run lint
+  - npm run build
+  - cp ./build/index.html ./build/404.html
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  local_dir: build
+  on:
+    branch: master

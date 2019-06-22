@@ -18,6 +18,7 @@ const PokemonContainer: React.FC<{
       .then((response: IPokemon) => {
         setPokemon(response);
       })
+      .catch(console.error)
       .finally(() => {
         setIsLoading(false);
       });
