@@ -3,7 +3,7 @@ node_js:
   - "10"
 
 env:
-  - PUBLIC_PATH=/pokemon-frontend-challenge/
+  - PUBLIC_URL=/pokemon-frontend-challenge/
 
 cache:
   directories:
