@@ -1,0 +1,23 @@
+.StyledLink {
+
+}
+
+.StyledLink_unstyled {
+  text-decoration: none;
+
+  &:link {
+    color: inherit;
+  }
+
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover {
+    color: inherit;
+  }
+
+  &:active {
+    color: inherit;
+  }
+}

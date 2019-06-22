@@ -1,9 +1,9 @@
 import React, { useState, useCallback } from 'react';
-import { Link } from 'react-router-dom';
 import { LIST_ITEMS_LIMIT } from 'constants/limits';
 import AllPokemonsContainer from 'containers/AllPokemonsContainer';
 import PokemonContainer from 'containers/PokemonContainer';
 import PokemonCard from 'components/PokemonCard';
+import StyledLink from 'components/StyledLink';
 
 import './AllPokemons.scss';
 
@@ -25,9 +25,9 @@ const AllPokemons: React.FC = () => {
   const renderPokemon = useCallback((name: string) => (
     <PokemonContainer key={name} name={name}>
       {(isLoading, pokemon) => (
-        <Link to={`pokemon/${name}`}>
+        <StyledLink to={`pokemon/${name}`}>
           <PokemonCard name={name} pokemon={pokemon} />
-        </Link>
+        </StyledLink>
       )}
     </PokemonContainer>
   ), []);
