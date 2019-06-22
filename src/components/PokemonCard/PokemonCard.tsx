@@ -1,5 +1,7 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { IPokemon } from 'types/pokemonTypes';
+import Badge from 'components/Badge';
+import { TYPE_COLOR_MAP } from 'constants/colors';
 
 import './PokemonCard.scss';
 
@@ -9,23 +11,30 @@ const PokemonCard: React.FC<{
 }> = ({
   name,
   pokemon,
-}) => {
-  const imgSrc = useMemo(() => {
-    if (pokemon) {
-      return pokemon.sprites.front_default;
-    }
-    return undefined;
-  }, [pokemon]);
+}) => (
+  <figure className="PokemonCard">
+    <img
+      src={pokemon ? pokemon.sprites.front_default : undefined}
+      alt={name}
+      className="PokemonCard-Image"
+    />
+    <figcaption className="PokemonCard-Caption">
+      <div className="PokemonCard-ID">{pokemon && `#${pokemon.id}`}</div>
+      <div className="PokemonCard-Name">{name}</div>
+      <div className="PokemonCard-Types">
+        {pokemon
+          && pokemon.types.map(
+            ({ type }) => (
+              <Badge color={TYPE_COLOR_MAP[type.name]}>
+                {type.name}
+              </Badge>
+            ),
+          )
+        }
 
-  return (
-    <figure>
-      <img
-        src={imgSrc}
-        alt={name}
-      />
-      <figcaption>{name}</figcaption>
-    </figure>
-  );
-};
+      </div>
+    </figcaption>
+  </figure>
+);
 
 export default PokemonCard;

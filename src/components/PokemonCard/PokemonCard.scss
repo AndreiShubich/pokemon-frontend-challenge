@@ -1,4 +1,4 @@
-figure {
+.PokemonCard {
   border: thin #c0c0c0 solid;
   display: flex;
   flex-flow: column;
@@ -7,15 +7,30 @@ figure {
   margin: auto;
 }
 
-img {
+.PokemonCard-Image {
   width: 96px;
   height: 96px;
 }
 
-figcaption {
-  background-color: #222;
-  color: #fff;
+.PokemonCard-Caption {
+  background-color: #EEE;
   font: italic smaller sans-serif;
   padding: 3px;
   text-align: center;
+}
+
+.PokemonCard-ID {
+  color: #818181;
+}
+
+.PokemonCard-Name {
+  color: #2B6CBF;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.PokemonCard-Types {
+  text-transform: uppercase;
 }

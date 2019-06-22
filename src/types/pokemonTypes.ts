@@ -14,9 +14,30 @@ interface IPokemonSprites {
   back_shiny_female: string;
 }
 
+export enum PokemonTypeName {
+  normal = 'normal',
+  fighting = 'fighting',
+  flying = 'flying',
+  poison = 'poison',
+  ground = 'ground',
+  rock = 'rock',
+  bug = 'bug',
+  ghost = 'ghost',
+  steel = 'steel',
+  fire = 'fire',
+  water = 'water',
+  grass = 'grass',
+  electric = 'electric',
+  psychic = 'psychic',
+  ice = 'ice',
+  dragon = 'dragon',
+  dark = 'dark',
+  fairy = 'fairy',
+}
+
 interface IPokemonType {
   slot: number;
-  type: INamedAPIResource;
+  type: INamedAPIResource<PokemonTypeName>;
 }
 
 interface IPokemonAbility {

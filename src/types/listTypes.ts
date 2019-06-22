@@ -1,5 +1,5 @@
-export interface INamedAPIResource {
-  name: string;
+export interface INamedAPIResource<T = string> {
+  name: T;
   url: string;
 }
 
