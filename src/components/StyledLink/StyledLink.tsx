@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from 'react';
+import React, { HTMLAttributes, useMemo } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 import classNames from 'classnames';
 
@@ -11,11 +11,11 @@ const StyledLink: React.FC<{
   unstyled = true,
   ...linkProps
 }) => {
-  const linkClassName = classNames('StyledLink', className, {
+  const linkClassName = useMemo(() => classNames('StyledLink', className, {
     StyledLink_unstyled: unstyled,
-  });
+  }), [className, unstyled]);
 
   return <Link className={linkClassName} {...linkProps} />;
 };
 
-export default StyledLink;
+export default React.memo(StyledLink);

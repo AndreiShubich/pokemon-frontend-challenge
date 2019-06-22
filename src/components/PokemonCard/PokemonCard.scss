@@ -2,9 +2,18 @@
   border: thin #c0c0c0 solid;
   display: flex;
   flex-flow: column;
-  padding: 5px;
-  max-width: 220px;
-  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+  width: 150px;
+
+  &:hover {
+    opacity: .8;
+  }
+
+  &:active {
+    opacity: 1;
+  }
 }
 
 .PokemonCard-Image {
@@ -13,7 +22,8 @@
 }
 
 .PokemonCard-Caption {
-  background-color: #EEE;
+  align-self: stretch;
+  background-color: #FFF;
   font: italic smaller sans-serif;
   padding: 3px;
   text-align: center;
@@ -33,4 +43,10 @@
 
 .PokemonCard-Types {
   text-transform: uppercase;
+}
+
+.PokemonCard-Type {
+  &:not(:first-child) {
+    margin-left: 5px;
+  }
 }
