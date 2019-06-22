@@ -1,0 +1,17 @@
+{
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "extends": ["react-app", "airbnb"],
+  "rules": {
+    "semi": "error",
+    "indent": ["error", 2],
+    "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
+    "react/prop-types": 0
+  }
+}
