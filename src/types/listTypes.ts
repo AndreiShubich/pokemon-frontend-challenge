@@ -3,7 +3,7 @@ export interface INamedAPIResource {
   url: string;
 }
 
-export interface IList<T = INamedAPIResource> {
+export interface INamedAPIResourceList<T = INamedAPIResource> {
   count: number;
   next: string | null;
   previous: string | null;

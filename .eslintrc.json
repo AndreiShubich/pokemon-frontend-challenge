@@ -12,6 +12,7 @@
     "semi": "error",
     "indent": ["error", 2],
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "react/button-has-type": 0
   }
 }
