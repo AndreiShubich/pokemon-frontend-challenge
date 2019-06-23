@@ -2,7 +2,7 @@ import { IPokemon } from 'types/pokemonTypes';
 import { TYPE_COLOR_MAP } from 'constants/colors';
 import getPokemonTypeNames from './getPokemonTypeNames';
 
-const getPokemonColor = (pokemon: IPokemon) => {
+const getPokemonBackground = (pokemon: IPokemon) => {
   const typeNames = getPokemonTypeNames(pokemon);
 
   const [type1, type2] = typeNames;
@@ -18,4 +18,4 @@ const getPokemonColor = (pokemon: IPokemon) => {
   return `linear-gradient(90deg, ${TYPE_COLOR_MAP[type1]} 50%, ${TYPE_COLOR_MAP[type2]} 50%)`;
 };
 
-export default getPokemonColor;
+export default getPokemonBackground;

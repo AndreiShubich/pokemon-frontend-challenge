@@ -1,7 +1,6 @@
 /* eslint-disable import/prefer-default-export */
-/* eslint-disable camelcase */
 
-import { INamedAPIResource } from './listTypes';
+import { INamedAPIResource } from './commonTypes';
 
 interface IPokemonSprites {
   front_default: string;

@@ -3,6 +3,11 @@ export interface INamedAPIResource<T = string> {
   url: string;
 }
 
+export interface IName {
+  name: string;
+  language: INamedAPIResource;
+}
+
 export interface INamedAPIResourceList<T = INamedAPIResource> {
   count: number;
   next: string | null;

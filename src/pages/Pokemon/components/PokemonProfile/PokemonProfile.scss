@@ -1,0 +1,21 @@
+.PokemonProfile {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+}
+
+.PokemonProfile-Data {
+  padding: 5px;
+}
+
+.PokemonProfile-Property {
+  font-weight: bold;
+
+  &::after {
+    content: ': ';
+  }
+}
+
+.PokemonProfile-Value_capitalize {
+  text-transform: capitalize;
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Pokedex from 'utils/Pokedex';
-import { INamedAPIResourceList } from 'types/listTypes';
+import { INamedAPIResourceList } from 'types/commonTypes';
 
 const AllPokemonsContainer: React.FC<{
   limit: number;

@@ -16,10 +16,6 @@
   }
 }
 
-.PokemonBasicInfo-Data {
-  flex-basis: 45%;
-}
-
 .PokemonBasicInfo-TypesAndId {
   display: flex;
   justify-content: space-between;
@@ -43,6 +39,7 @@
 
 .PokemonBasicInfo-StatName {
   text-transform: uppercase;
+  margin-right: 15px;
 }
 
 .Pokemon-StatProgress {
