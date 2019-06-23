@@ -1,4 +1,5 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, HTMLAttributes } from 'react';
+import classNames from 'classnames';
 import { IPokemon } from 'types/pokemonTypes';
 import PokemonTypeBadge from 'components/PokemonTypeBadge';
 import getPokemonColor from 'utils/getPokemonColor';
@@ -8,14 +9,17 @@ import './PokemonCard.scss';
 
 const PokemonCard: React.FC<{
   pokemon: IPokemon,
-}> = ({
+} & HTMLAttributes<HTMLElement>> = ({
   pokemon,
+  className,
 }) => {
   const pokemonTypeNames = useMemo(() => getPokemonTypeNames(pokemon), [pokemon]);
   const pokemonColor = useMemo(() => getPokemonColor(pokemon), [pokemon]);
 
+  const cardClassName = useMemo(() => classNames('PokemonCard', className), [className]);
+
   return (
-    <figure className="PokemonCard" style={{ background: pokemonColor }}>
+    <figure className={cardClassName} style={{ background: pokemonColor }}>
       <img
         src={pokemon.sprites.front_default}
         alt={pokemon.name}

@@ -7,6 +7,7 @@ import AllPokemons from 'pages/AllPokemons';
 import * as serviceWorker from './serviceWorker';
 
 import 'normalize.css';
+import 'styles/base.scss';
 
 ReactDOM.render(
   <Router basename={BASE_URL}>
