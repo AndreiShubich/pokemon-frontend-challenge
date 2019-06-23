@@ -1,13 +1,23 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, HTMLAttributes } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import usePokemon from 'hooks/usePokemon';
 import usePokemonSpecies from 'hooks/usePokemonSpecies';
 import getPokemonBackground from 'utils/getPokemonBackground';
+import StyledLink from 'components/StyledLink';
 import PokemonSection from './components/PokemonSection';
 import PokemonBasicInfo from './components/PokemonBasicInfo';
 import PokemonProfile from './components/PokemonProfile';
 
 import './Pokemon.scss';
+
+const PokemonWrapper: React.FC<
+  HTMLAttributes<HTMLElement>
+> = ({ children, style }) => (
+  <main className="Pokemon" style={style}>
+    <StyledLink className="Pokemon-Close" to="/">X</StyledLink>
+    {children}
+  </main>
+);
 
 const Pokemon: React.FC<
   RouteComponentProps<{
@@ -24,12 +34,12 @@ const Pokemon: React.FC<
     || isPokemonSpeciesLoading
     || !pokemon
     || !pokemonSpecies
-  ) return null;
+  ) return <PokemonWrapper />;
 
-  const pokemonColor = getPokemonBackground(pokemon);
+  const pokemonBackground = getPokemonBackground(pokemon);
 
   return (
-    <main className="Pokemon" style={{ background: pokemonColor }}>
+    <PokemonWrapper style={{ background: pokemonBackground }}>
       <div className="Pokemon-Body">
         <PokemonSection title={pokemon.name} isMain>
           <PokemonBasicInfo pokemon={pokemon} />
@@ -41,7 +51,7 @@ const Pokemon: React.FC<
         <PokemonSection className="Pokemon-RegularSection" title="Evolutions">{null}</PokemonSection>
         <PokemonSection className="Pokemon-RegularSection" title="Moves">{null}</PokemonSection>
       </div>
-    </main>
+    </PokemonWrapper>
   );
 };
 

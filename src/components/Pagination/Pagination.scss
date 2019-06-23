@@ -1,0 +1,37 @@
+.Pagination-List {
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  margin: 0;
+  user-select: none;
+}
+
+.Pagination-Page {
+  list-style: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.Pagination-Page_active {
+  background: blue;
+  color: white;
+  cursor: default;
+}
+
+.Pagination-Page_possible {
+  &:hover {
+    background: deepskyblue;
+    color: whitesmoke;
+  }
+
+  &:active {
+    background: darkblue;
+    color: whitesmoke;
+  }
+}
+
+.Pagination-Page_disabled {
+  color: #AAA;
+  cursor: default;
+  pointer-events: none;
+}
