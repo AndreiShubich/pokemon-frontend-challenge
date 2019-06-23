@@ -56,8 +56,17 @@ interface IPokemonMove {
   version_group_details: IPokemonMoveVersion[];
 }
 
+export enum PokemonStatName {
+  hp = 'hp',
+  attack = 'attack',
+  defense = 'defense',
+  speed = 'speed',
+  'special-attack' = 'special-attack',
+  'special-defense' = 'special-defense',
+}
+
 interface IPokemonStat {
-  stat: INamedAPIResource;
+  stat: INamedAPIResource<PokemonStatName>;
   effort: number;
   base_stat: number;
 }

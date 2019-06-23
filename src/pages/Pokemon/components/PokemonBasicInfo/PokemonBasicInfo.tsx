@@ -2,6 +2,7 @@ import React from 'react';
 import { IPokemon } from 'types/pokemonTypes';
 import getPokemonTypeNames from 'utils/getPokemonTypeNames';
 import PokemonTypeBadge from 'components/PokemonTypeBadge';
+import { STAT_MAP } from 'constants/stat';
 
 import './PokemonBasicInfo.scss';
 
@@ -44,7 +45,7 @@ const PokemonBasicInfo: React.FC<{
             stats.map(stat => (
               <div key={stat.stat.name} className="PokemonBasicInfo-Stat">
                 <span className="PokemonBasicInfo-StatName">
-                  {stat.stat.name}
+                  {STAT_MAP[stat.stat.name]}
                 </span>
                 <progress
                   className="PokemonBasicInfo-StatProgress"
