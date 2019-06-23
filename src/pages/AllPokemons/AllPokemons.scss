@@ -6,3 +6,13 @@
 .AllPokemons-Nav {
   text-align: center;
 }
+
+.AllPokemons-PokemonLink {
+  &:hover {
+    opacity: .8;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+}
