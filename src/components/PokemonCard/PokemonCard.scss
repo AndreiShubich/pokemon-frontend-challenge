@@ -21,8 +21,12 @@
   text-align: center;
 }
 
-.PokemonCard-ID {
+.PokemonCard-Id {
   color: #818181;
+
+  &::before {
+    content: '#'
+  }
 }
 
 .PokemonCard-Name {

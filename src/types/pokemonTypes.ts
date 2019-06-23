@@ -35,7 +35,7 @@ export enum PokemonTypeName {
   fairy = 'fairy',
 }
 
-interface IPokemonType {
+export interface IPokemonType {
   slot: number;
   type: INamedAPIResource<PokemonTypeName>;
 }

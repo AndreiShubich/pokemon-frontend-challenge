@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { IPokemon } from 'types/pokemonTypes';
-import Pokedex from 'utils/Pokedex';
+import usePokemon from 'hooks/usePokemon';
 
 const PokemonContainer: React.FC<{
   name: string,
@@ -9,20 +9,7 @@ const PokemonContainer: React.FC<{
   name,
   children,
 }) => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [pokemon, setPokemon] = useState<IPokemon>();
-
-  useEffect(() => {
-    setIsLoading(true);
-    Pokedex.getPokemonByName(name)
-      .then((response: IPokemon) => {
-        setPokemon(response);
-      })
-      .catch(console.error)
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, [name]);
+  const { isLoading, pokemon } = usePokemon(name);
 
   return (
     <>
@@ -31,4 +18,4 @@ const PokemonContainer: React.FC<{
   );
 };
 
-export default PokemonContainer;
+export default React.memo(PokemonContainer);

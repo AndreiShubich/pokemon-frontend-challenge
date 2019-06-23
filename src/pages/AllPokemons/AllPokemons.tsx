@@ -24,9 +24,9 @@ const AllPokemons: React.FC = () => {
 
   const renderPokemon = useCallback((name: string) => (
     <PokemonContainer key={name} name={name}>
-      {(isLoading, pokemon) => (
+      {(isLoading, pokemon) => !isLoading && pokemon && (
         <StyledLink to={`pokemon/${name}`} className="AllPokemons-PokemonLink">
-          <PokemonCard name={name} pokemon={pokemon} />
+          <PokemonCard pokemon={pokemon} />
         </StyledLink>
       )}
     </PokemonContainer>
@@ -53,4 +53,4 @@ const AllPokemons: React.FC = () => {
   );
 };
 
-export default AllPokemons;
+export default React.memo(AllPokemons);

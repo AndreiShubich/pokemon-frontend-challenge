@@ -12,7 +12,7 @@ ReactDOM.render(
   <Router basename={BASE_URL}>
     <Switch>
       <Route exact path="/" component={AllPokemons} />
-      <Route path="/pokemon/:name" component={Pokemon} />
+      <Route path="/pokemon/:nameOrId" component={Pokemon} />
     </Switch>
   </Router>,
   document.getElementById('root'),
