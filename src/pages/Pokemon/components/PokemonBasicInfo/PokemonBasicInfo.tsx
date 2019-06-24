@@ -18,9 +18,10 @@ const PokemonBasicInfo: React.FC<{
 
   return (
     <div className="PokemonBasicInfo">
-      <div className="PokemonBasicInfo-Image">
-        <img src={imgSrc} alt={name} />
-      </div>
+      {imgSrc
+        ? <img className="PokemonBasicInfo-Image" src={imgSrc} alt={name} />
+        : <div className="PokemonBasicInfo-Image PokemonBasicInfo-Image_none">?</div>
+      }
       <div className="PokemonBasicInfo-Data">
         <div className="PokemonBasicInfo-TypesAndId">
           <div className="PokemonBasicInfo-Types">

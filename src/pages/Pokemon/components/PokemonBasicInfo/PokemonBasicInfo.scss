@@ -6,6 +6,20 @@
   padding: 30px;
 }
 
+.PokemonBasicInfo-Image {
+  height: 96px;
+  width: 96px;
+  align-self: center;
+}
+
+.PokemonBasicInfo-Image_none {
+  line-height: 96px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 48px;
+  border: 1px solid black;
+}
+
 .PokemonBasicInfo-Badge {
   &::first-letter {
     text-transform: capitalize;

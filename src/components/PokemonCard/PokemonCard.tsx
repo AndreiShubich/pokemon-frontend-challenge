@@ -18,16 +18,17 @@ const PokemonCard: React.FC<{
 
   const cardClassName = useMemo(() => classNames('PokemonCard', className), [className]);
 
+  const { name, id, sprites: { front_default: imgSrc } } = pokemon;
+
   return (
     <figure className={cardClassName} style={{ background: pokemonColor }}>
-      <img
-        src={pokemon.sprites.front_default}
-        alt={pokemon.name}
-        className="PokemonCard-Image"
-      />
+      {imgSrc
+        ? <img src={imgSrc} alt={name} className="PokemonCard-Image" />
+        : <div className="PokemonCard-Image PokemonCard-Image_none">?</div>
+      }
       <figcaption className="PokemonCard-Caption">
-        <div className="PokemonCard-Id">{pokemon.id}</div>
-        <div className="PokemonCard-Name">{pokemon.name}</div>
+        <div className="PokemonCard-Id">{id}</div>
+        <div className="PokemonCard-Name">{name}</div>
         <div className="PokemonCard-Types">
           {pokemonTypeNames.map(typeName => (
             <PokemonTypeBadge
