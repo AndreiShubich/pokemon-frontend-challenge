@@ -11,7 +11,7 @@ const getPokemonGenderRatio = ({ gender_rate }: IPokemonSpecies) => {
     maleChance = 100 - femaleChance;
   }
 
-  return `${maleChance.toFixed(2)}% \u2642 ${femaleChance.toFixed(2)}% \u2640`;
+  return `${maleChance}% \u2642 ${femaleChance}% \u2640`;
 };
 
 export default getPokemonGenderRatio;

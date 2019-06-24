@@ -7,6 +7,7 @@ import StyledLink from 'components/StyledLink';
 import PokemonSection from './components/PokemonSection';
 import PokemonBasicInfo from './components/PokemonBasicInfo';
 import PokemonProfile from './components/PokemonProfile';
+import PokemonEvolution from './components/PokemonEvolution';
 
 import './Pokemon.scss';
 
@@ -47,8 +48,9 @@ const Pokemon: React.FC<
         <PokemonSection className="Pokemon-RegularSection" title="Profile">
           <PokemonProfile pokemon={pokemon} pokemonSpecies={pokemonSpecies} />
         </PokemonSection>
-        {/* <PokemonSection title="Damage When Attacked">{null}</PokemonSection> */}
-        <PokemonSection className="Pokemon-RegularSection" title="Evolutions">{null}</PokemonSection>
+        <PokemonSection className="Pokemon-RegularSection" title="Evolutions">
+          <PokemonEvolution pokemonSpecies={pokemonSpecies} />
+        </PokemonSection>
         <PokemonSection className="Pokemon-RegularSection" title="Moves">{null}</PokemonSection>
       </div>
     </PokemonWrapper>

@@ -1,0 +1,23 @@
+.PokemonEvolution {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.PokemonEvolution-Arrow {
+  font-size: 48px;
+  padding: 25px;
+  user-select: none;
+}
+
+.PokemonEvolution-PokemonLink {
+  &:hover {
+    opacity: .8;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+}

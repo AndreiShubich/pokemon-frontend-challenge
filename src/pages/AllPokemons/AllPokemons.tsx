@@ -36,7 +36,7 @@ const AllPokemons: React.FC = () => {
   const renderPokemon = useCallback((name: string) => (
     <PokemonContainer key={name} name={name}>
       {(isLoading, pokemon) => !isLoading && pokemon && (
-        <StyledLink to={`pokemon/${name}`} className="AllPokemons-PokemonLink">
+        <StyledLink to={`/pokemon/${name}`} className="AllPokemons-PokemonLink">
           <PokemonCard pokemon={pokemon} />
         </StyledLink>
       )}
