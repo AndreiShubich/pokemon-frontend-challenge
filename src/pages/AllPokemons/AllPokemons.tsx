@@ -5,15 +5,32 @@ import PokemonContainer from 'containers/PokemonContainer';
 import PokemonCard from 'components/PokemonCard';
 import StyledLink from 'components/StyledLink';
 import Pagination from 'components/Pagination';
+import Filter from 'components/Filter';
+import { DEFAULT_FILTER_ALL, FILTERS } from './constants';
 
 import './AllPokemons.scss';
 
 const AllPokemons: React.FC = () => {
-  const [offset, setOffset] = useState<number>(parseInt(sessionStorage.getItem('offset') || '0', 10));
+  const [offset, setOffset] = useState<number>(
+    parseInt(
+      sessionStorage.getItem('offset') || '0',
+      10,
+    ),
+  );
+
+  const [activeFilter, setActiveFilter] = useState<string>(
+    sessionStorage.getItem('filter') || DEFAULT_FILTER_ALL,
+  );
 
   const handleSetOffset = useCallback((newOffset: number) => {
     sessionStorage.setItem('offset', `${newOffset}`);
     setOffset(newOffset);
+  }, []);
+
+  const handleSetFilter = useCallback((newFilter: string) => {
+    sessionStorage.setItem('filter', `${newFilter}`);
+    setActiveFilter(newFilter);
+    setOffset(0);
   }, []);
 
   const renderPokemon = useCallback((name: string) => (
@@ -28,7 +45,21 @@ const AllPokemons: React.FC = () => {
 
   return (
     <div className="AllPokemons">
-      <AllPokemonsContainer offset={offset} limit={LIST_ITEMS_LIMIT}>
+      <Filter
+        name="Type"
+        values={FILTERS}
+        activeValue={activeFilter}
+        onSetValue={handleSetFilter}
+      />
+      <AllPokemonsContainer
+        offset={offset}
+        limit={LIST_ITEMS_LIMIT}
+        typeName={
+          activeFilter !== DEFAULT_FILTER_ALL
+            ? activeFilter
+            : undefined
+        }
+      >
         {(isLoading, {
           count, results,
         }) => !isLoading && results && (

@@ -1,0 +1,36 @@
+.Filter {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  background: antiquewhite;
+}
+
+.Filter-Name {
+  padding: 5px;
+}
+
+.Filter-List {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.Filter-Item {
+  cursor: pointer;
+  list-style: none;
+  padding: 5px;
+  color: blue;
+  text-decoration: underline;
+  text-transform: uppercase;
+
+  &:active {
+    color: red;
+  }
+}
+
+.Filter-Item_active {
+  cursor: default;
+  color: black;
+  text-decoration: none;
+}
