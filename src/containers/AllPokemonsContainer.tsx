@@ -1,70 +1,25 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import Pokedex from 'utils/Pokedex';
+import React from 'react';
 import { INamedAPIResourceList } from 'types/commonTypes';
-import { IType } from 'types/typeTypes';
+import usePokemonList from 'hooks/usePokemonList';
 
 const AllPokemonsContainer: React.FC<{
   limit: number;
   offset: number;
   typeName?: string;
-  children: (isLoading: boolean, pokemonsList: INamedAPIResourceList) => React.ReactNode;
+  children: (
+    isLoading: boolean, pokemonsList: INamedAPIResourceList | undefined)
+  => React.ReactNode;
 }> = ({
   limit,
   offset,
   typeName,
   children,
 }) => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [pokemonsList, setPokemonsList] = useState<INamedAPIResourceList>();
-
-  const getPokemonsList = useCallback(() => {
-    setIsLoading(true);
-
-    Pokedex.getPokemonsList({
-      limit,
-      offset,
-    })
-      .then((response: INamedAPIResourceList) => {
-        setPokemonsList(response);
-      })
-      .catch(console.error)
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, [limit, offset]);
-
-  const getTypeByName = useCallback(() => {
-    setIsLoading(true);
-
-    Pokedex.getTypeByName(typeName)
-      .then((response: IType) => {
-        const count = response.pokemon.length;
-        const results = response.pokemon
-          .slice(offset, offset + limit)
-          .map(({ pokemon }) => pokemon);
-
-        setPokemonsList({
-          count,
-          results,
-          next: null,
-          previous: null,
-        });
-      })
-      .catch(console.error)
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, [limit, offset, typeName]);
-
-  useEffect(() => {
-    if (typeName) {
-      getTypeByName();
-    } else {
-      getPokemonsList();
-    }
-  }, [getPokemonsList, getTypeByName, limit, offset, typeName]);
-
-  if (!pokemonsList) return null;
+  const { isLoading, pokemonsList } = usePokemonList(
+    limit,
+    offset,
+    typeName,
+  );
 
   return (
     <>
