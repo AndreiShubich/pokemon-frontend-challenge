@@ -6,16 +6,21 @@
 }
 
 .Pokemon-Close {
+  cursor: pointer;
+  background: #EEE;
   position: fixed;
   top: 0px;
   left: 0px;
   color: white;
   padding: 20px;
-  cursor: pointer;
   user-select: none;
 
   &:hover {
     background: #AAA;
+  }
+
+  &:active {
+    background: #888;
   }
 }
 
@@ -27,5 +32,5 @@
 }
 
 .Pokemon-RegularSection {
-  margin: 20px 10px;
+  padding: 20px 10px 0;
 }

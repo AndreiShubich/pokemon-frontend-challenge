@@ -32,7 +32,6 @@ const PokemonTypeBadge: React.FC<{
       {...colorProps}
     >
       {children}
-
     </Badge>
   );
 };

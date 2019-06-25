@@ -1,5 +1,11 @@
-/* eslint-disable import/prefer-default-export */
-import { INamedAPIResource } from './commonTypes';
+import { INamedAPIResource, IName } from './commonTypes';
+import { PokemonTypeName } from './pokemonTypes';
+
+export interface IVerboseEffect {
+  effect: string;
+  short_effect: string;
+  language: INamedAPIResource;
+}
 
 // @TODO: Not full interface
 export interface IMove {
@@ -14,16 +20,16 @@ export interface IMove {
   contest_type: INamedAPIResource;
   // contest_effect: APIResource (ContestEffect)
   damage_class: INamedAPIResource;
-  // effect_entries: list VerboseEffect
+  effect_entries: IVerboseEffect[]
   // effect_changes: list AbilityEffectChange
   // flavor_text_entries: list MoveFlavorText
   generation: INamedAPIResource;
   // machines: list MachineVersionDetail
   // meta: MoveMetaData
-  // names: list Name
+  names: IName[];
   // past_values: list PastMoveStatValues
   // stat_changes: list MoveStatChange
   // super_contest_effect: APIResource (SuperContestEffect)
   target: INamedAPIResource;
-  type: INamedAPIResource;
+  type: INamedAPIResource<PokemonTypeName>;
 }

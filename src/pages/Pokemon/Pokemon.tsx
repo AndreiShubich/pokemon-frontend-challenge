@@ -4,11 +4,11 @@ import usePokemon from 'hooks/usePokemon';
 import usePokemonSpecies from 'hooks/usePokemonSpecies';
 import getPokemonBackground from 'utils/getPokemonBackground';
 import StyledLink from 'components/StyledLink';
-import MoveContainer from 'containers/MoveContainer';
 import PokemonSection from './components/PokemonSection';
 import PokemonBasicInfo from './components/PokemonBasicInfo';
 import PokemonProfile from './components/PokemonProfile';
 import PokemonEvolution from './components/PokemonEvolution';
+import PokemonMoves from './components/PokemonMoves';
 
 import './Pokemon.scss';
 
@@ -46,27 +46,17 @@ const Pokemon: React.FC<
         <PokemonSection title={pokemon.name} isMain>
           <PokemonBasicInfo pokemon={pokemon} />
         </PokemonSection>
+
         <PokemonSection className="Pokemon-RegularSection" title="Profile">
           <PokemonProfile pokemon={pokemon} pokemonSpecies={pokemonSpecies} />
         </PokemonSection>
+
         <PokemonSection className="Pokemon-RegularSection" title="Evolutions">
           <PokemonEvolution pokemonSpecies={pokemonSpecies} />
         </PokemonSection>
+
         <PokemonSection className="Pokemon-RegularSection" title="Moves">
-          {
-            pokemon.moves.map(moveItem => (
-              <MoveContainer name={moveItem.move.name}>
-                {(isMoveLoading, move) => move && (
-                  <div key={move.name}>
-                    {move.name}
-                    {' '}
-                    {move.type.name}
-                  </div>
-                )
-                }
-              </MoveContainer>
-            ))
-          }
+          <PokemonMoves pokemon={pokemon} />
         </PokemonSection>
       </div>
     </PokemonWrapper>

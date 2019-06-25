@@ -1,0 +1,47 @@
+.PokemonMoves {
+  padding: 15px;
+}
+
+.PokemonMove-Header {
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+}
+
+.PokemonMove-Name {
+  flex-basis: 485px;
+}
+
+.PokemonMove-Badge {
+  flex-basis: 80px;
+  text-transform: uppercase;
+}
+
+.PokemonMove-ShowMore {
+  margin-left: 15px;
+}
+
+.PokemonMove-Body {
+  max-width: 600px;
+  margin: 0 auto;
+  background: aliceblue;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.PokemonMove-Indicators {
+  display: flex;
+  justify-content: space-between;
+}
+
+.PokemonMove-IndicatorName {
+  font-weight: bold;
+
+  &::after {
+    content: ': ';
+  }
+}
+
+.PokemonMove-Effect {
+  padding-top: 15px;
+}
