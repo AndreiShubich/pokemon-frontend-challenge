@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/pokemon-frontend-challenge/static/css/main.4d1c4fa3.chunk.css",
+    "main.js": "/pokemon-frontend-challenge/static/js/main.bde28383.chunk.js",
+    "main.js.map": "/pokemon-frontend-challenge/static/js/main.bde28383.chunk.js.map",
+    "runtime~main.js": "/pokemon-frontend-challenge/static/js/runtime~main.ac307507.js",
+    "runtime~main.js.map": "/pokemon-frontend-challenge/static/js/runtime~main.ac307507.js.map",
+    "static/css/2.764ccc25.chunk.css": "/pokemon-frontend-challenge/static/css/2.764ccc25.chunk.css",
+    "static/js/2.f32356a6.chunk.js": "/pokemon-frontend-challenge/static/js/2.f32356a6.chunk.js",
+    "static/js/2.f32356a6.chunk.js.map": "/pokemon-frontend-challenge/static/js/2.f32356a6.chunk.js.map",
+    "index.html": "/pokemon-frontend-challenge/index.html",
+    "precache-manifest.318252f317fa6b04f7aaff9e50cbf628.js": "/pokemon-frontend-challenge/precache-manifest.318252f317fa6b04f7aaff9e50cbf628.js",
+    "service-worker.js": "/pokemon-frontend-challenge/service-worker.js",
+    "static/css/2.764ccc25.chunk.css.map": "/pokemon-frontend-challenge/static/css/2.764ccc25.chunk.css.map",
+    "static/css/main.4d1c4fa3.chunk.css.map": "/pokemon-frontend-challenge/static/css/main.4d1c4fa3.chunk.css.map"
+  }
+}
